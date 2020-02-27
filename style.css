@@ -1,192 +1,205 @@
-body {
-  margin: 0;
-  min-width: 960px;
-  font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 32px;
-  color: #ffffff;
-  background-color: #0a0000;
-  background-image: url("img/hero-bg-TK.jpg");
-  background-repeat: no-repeat;
-  background-position: top center;
+* {
+  /*Все элементы*/
+  padding: 0; /*Внутренние отступы*/
+  margin: 0; /*Внешние отступы*/
+  font-family: sans-serif; /*Шрифт*/
 }
 
-.container {
-  max-width: 928px;
+body,
+html {
+  overflow-x: hidden; /*Указывает, что произойдёт, если содержимое переполняет левый, либо правый край элемента. Hidden=скрыть.*/
+}
+
+nav {
+  margin: auto; /*auto=центрирует*/
+  max-width: 1100px; /*Максимальная ширина*/
+  width: 100%; /*Ширина*/
+}
+
+#checkbox-menu,
+.toggle {
+  display: none; /*Отключение отображения*/
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  height: 50px; /*Высота*/
+  display: flex; /*Расстановка, выравнивание и распределение мест между элементами*/
+  flex-direction: row; /*Определяет ось(направление) выравнивания, row=слева на право, column=сверху вниз*/
+  justify-content: space-around; /*Выравнивание вдоль главной оси, равное расстояние между элементами*/
+  align-items: center; /*выравнивание всех элементов внутри флекс контейнера вдоль поперечной оси*/
+  list-style-type: none; /*Убирает кружочки перед элементами неупорядоченного списка*/
+}
+
+ul.menu.touch li a {
+  color: #000; /*Цвет текста*/
+  text-decoration: none; /*text-decoration=добавляет тексту линии,none=Убирает линии ссылок*/
+  align-self: center; /*Выравнивание флекс элементов по текущей линии*/
+  font-size: 13px; /*Размер шрифта*/
+  padding: 10px 15px;
+  transition: background 0.2s linear; /*Эффект перехода между двумя состояниями*/
+}
+
+ul.menu.touch li a:hover {
+  /*Определение стиля элемента при наведение на него курсора*/
+  background: rgb(0, 255, 255); /*Цвет фона элемента*/
+  border-radius: 3px; /*Закругление элемента*/
+}
+
+ul.menu.touch li a.logo {
+  font-size: 25px;
+  margin-right: 240px;
+}
+
+ul.menu.touch li a.contacts {
+  margin-right: 100px;
+}
+
+.wrapper {
   margin: 0 auto;
-  padding: 0 16px;
-}
-
-.page-header {
-  margin: 0 0 180px;
-  padding: 32px 0 32px;
-}
-
-.page-header .container,
-.page-footer .container {
-  max-width: 1408px;
-  text-align: right;
-}
-
-.page-header a {
-  margin-left: 56px;
-  color: #fea18d;
-  text-decoration: none;
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-.header-email {
-  padding-left: 30px;
-  background-image: url("img/icon-email.svg");
-}
-
-.header-phone {
-  padding-left: 25px;
-  background-image: url("img/icon-phone.svg");
-}
-
-.hero-image {
-  margin-bottom: 480px;
-}
-
-.hero-image .container {
-  max-width: 1408px;
-  text-align: center;
-  color: #ffffff;
-
-}
-
-.heading {
-  margin: 0 0 24px;
-  font-size: 80px;
-  line-height: 96px;
-}
-
-.hero-image p {
-  margin: 0;
-  font-size: 32px;
-  line-height: 48px;
-  color: #ffffff;
+  max-width: 1100px;
+  width: 100%;
 }
 
 .intro {
-  margin: 0 0 120px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end; /*Выравнивание по правой стороне*/
 }
 
-.subheading {
-  margin: 0 0 56px;
-  font-size: 56px;
-  line-height: 80px;
-  text-align: center;
+.intro-img {
+  background-image: url(img/Intro-img.jpg);
+  width: 1024px;
+  height: 576px;
 }
 
-.user-image {
-  margin: 0 0 32px;
-  text-align: center;
+.intro-text {
+  font-size: 62px;
+  position: absolute; /*Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице. absolute=отсчет координат ведется от края родительского элемента*/
+  right: 750px;
+  top: 220px;
+  color: rgb(0, 0, 0);
 }
 
-.intro h3,
-.portfolio h3 {
-  margin: 0 0 12px;
-  font-size: 28px;
-  line-height: 40px;
-  font-weight: 500;
+.intro-contacts {
+  background: rgb(0, 255, 255);
+  max-width: 590px;
+  position: absolute;
+  right: 133px;
+  top: 570px;
+  display: flex;
+  justify-content: space-between; /*Флексы равномерно распределяются по всей строке. Первый и последний элемент прижимаются к соответствующим краям контейнера*/
+  padding: 30px 50px;
 }
 
-.intro p {
-  margin: 0 0 32px;
+.intro-contacts i {
+  color: rgb(255, 255, 255);
+  margin-right: 30px;
 }
 
-.skills-list {
-  margin: 0;
-  padding: 0;
+.intro-contacts p {
+  font-size: 18px;
+  margin-right: 60px;
 }
 
-.skills-list dt {
-  padding-left: 32px;
-  background-repeat: no-repeat;
-  background-position: left;
+div.intro-contacts .intro-contacts-p {
+  margin-right: 15px;
 }
 
-.skill-html {
-  background-image: url("img/icon-html.svg");
+@media screen and (max-width: 765px) {
+  /*Адаптив для экрана меньше 765 пикселей*/
+  .toggle {
+    clear: both; /*Плавающие элементы не разрешены с обеих сторон элемента (как с левой, так и с правой стороны).*/
+    display: block; /*Делает элемент блочным*/
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px; /*Ширина строки*/
+    width: 100%;
+    color: #000;
+    background: rgb(0, 255, 255);
+    transition: all 0.1s linear;
+  }
+
+  .toggle:hover {
+    background-color: rgb(0, 136, 136);
+  }
+
+  #checkbox-menu:checked + label ul.menu.touch li {
+    /*Что происходит если чекбокс активирован*/
+    opacity: 1; /*Прозрачность элемента 1-нет, 0-да, 0.5-полупрозрачный*/
+    visibility: visible; /*Видимость элементов*/
+    transition: all 0.7s linear;
+  }
+
+  #checkbox-menu:checked + label ul.menu.touch {
+    /*Высота опущеного nav*/
+    height: 350px;
+  }
+
+  .menu {
+    flex-direction: column; /*Определяет ось(направление) выравнивания, row=слева на право, column=сверху вниз*/
+    height: 0;
+    transition: 0.3s linear;
+  }
+
+  ul.menu.touch li a {
+    width: 95%;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+  }
+  ul.menu.touch li a.logo {
+    margin-right: 0;
+  }
+
+  ul.menu.touch li a.contacts {
+    margin-right: 0;
+  }
+
+  #checkbox-menu + label ul.menu.touch li {
+    width: 95%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .intro {
+    margin-top: 0px;
+    display: block;
+    max-width: 100%;
+  }
+
+  .intro-img {
+    background-position: bottom 50px right 500px; /*Меняем позицию картинки сдвинув её*/
+  }
+
+  .intro-text {
+    font-size: 35px;
+    position: relative; /*Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице. absolute=отсчет координат ведется от края родительского элемента*/
+    right: -10px;
+    top: 170px;
 }
 
-.skill-css {
-  background-image: url("img/icon-css.svg");
-}
+  .intro-contacts {
+    position: relative; /*Положение элемента устанавливается относительно его исходного места */
+    right: 0px;
+    top: -58px;
+    padding: 20px 0px;
+  }
 
-.level {
-  margin: 4px 0 16px;
-  padding: 0;
-  height: 14px;
-  font-size: 0;
-  background-color: #080208;
-  border: 1px solid #712073;
-  border-radius: 8px;
-}
+  .intro-contacts i {
+    margin: 0px 10px;
+  }
 
-.level div {
-  margin: 1px;
-  height: 12px;
-  background-color: #fea18d;
-  border-radius: 6px;
-}
+  .intro-contacts p {
+    font-size: 16px;
+    margin: 0px 10px;
+  }
 
-.portfolio {
-  margin: 0 0 120px;
-}
+  div.intro-contacts .intro-contacts-p {
+    margin-right: 0 10px;
+  }
 
-.projects {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.projects li {
-  margin: 0 0 80px;
-}
-
-.project-image {
-  margin: 0 0 24px;
-  text-align: center;
-}
-
-.projects p {
-  margin: 0 0 24px;
-}
-
-.button {
-  padding: 6px 20px;
-  display: inline-block;
-  vertical-align: baseline;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 4px;
-  background-color: #712073;
-  color: #ffffff;
-}
-
-.page-footer {
-  padding: 40px 0;
-  background-color: #260c26;
-}
-
-.page-footer a {
-  margin-left: 56px;
-  color: #fea18d;
-  text-decoration: none;
-  background-repeat: no-repeat;
-  background-position: left;
-}
-
-.footer-email {
-  padding-left: 30px;
-  background-image: url("img/icon-email.svg");
-}
-
-.footer-phone {
-  padding-left: 25px;
-  background-image: url("img/icon-phone.svg");
+  
 }
